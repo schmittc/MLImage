@@ -1,8 +1,8 @@
-FROM tensorflow/tensorflow:2.3.1-gpu-jupyter
+FROM tensorflow/tensorflow:2.4.1-gpu-jupyter
 ENV DEBIAN_FRONTEND=noninteractive
-RUN pip3 install -U pip setuptools h5py pandas sklearn keras uproot numpy scipy matplotlib joblib tensorflow-addons tensorboard_plugin_profile pymysql
+RUN pip3 install -U pip setuptools h5py pandas sklearn keras uproot numpy scipy matplotlib joblib tensorflow-addons tensorboard_plugin_profile pymysql python3-venv 
 RUN mkdir -p /localscratch && chmod 777 /localscratch
 RUN mkdir -p /localscratch2 && chmod 777 /localscratch2
 RUN mkdir -p /uni-mainz.de && chmod 777 /uni-mainz.de
 
-CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/ --ip 0.0.0.0 --no-browser --allow-root"]
+#CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/ --ip 0.0.0.0 --no-browser --allow-root"]
