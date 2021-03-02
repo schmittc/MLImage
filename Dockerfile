@@ -1,6 +1,7 @@
 FROM tensorflow/tensorflow:2.4.1-gpu-jupyter
 ENV DEBIAN_FRONTEND=noninteractive
-RUN pip3 install -U pip setuptools h5py pandas sklearn keras uproot numpy scipy matplotlib joblib tensorflow-addons tensorboard_plugin_profile pymysql python3-venv 
+RUN apt-get install python3-venv
+RUN pip3 install -U pip setuptools h5py pandas sklearn keras uproot numpy scipy matplotlib joblib tensorflow-addons tensorboard_plugin_profile pymysql 
 RUN mkdir -p /localscratch && chmod 777 /localscratch
 RUN mkdir -p /localscratch2 && chmod 777 /localscratch2
 RUN mkdir -p /uni-mainz.de && chmod 777 /uni-mainz.de
